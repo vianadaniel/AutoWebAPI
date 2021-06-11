@@ -1,0 +1,89 @@
+### Get Cars
+
+get http://localhost:5000/api/cars
+Content-Type: application/json
+
+
+### Create car
+
+POST http://localhost:5000/api/cars/create
+Content-Type: application/json
+
+{
+	"plate": "owq1235",
+	"color": "yellow",
+	"brand": "VW"
+	
+}
+
+### Create car
+
+POST http://localhost:5000/api/cars/create
+Content-Type: application/json
+
+{
+	"plate": "owq1237",
+	"color": "green",
+	"brand": "Fiat"
+	
+}
+
+### Delete and Recover car
+
+PATCH http://localhost:5000/api/cars/delete
+Content-Type: application/json
+
+{
+	"plate": "asd1234"
+}
+
+### Filter car
+
+GET http://localhost:5000/api/cars/filter?text=blue123
+Content-Type: application/json
+
+### Update car
+
+put http://localhost:5000/api/cars/60c2f93d4d00592880e3ee1e
+Content-Type: application/json
+
+{
+	"brand": "test",
+	"plate": "asd4321",
+	"color": "red"
+}
+
+### Create driver
+
+POST http://localhost:5000/api/drivers/create
+Content-Type: application/json
+
+{
+	"name": "Joaquim"
+	
+	
+}
+
+### Delete and recover driver
+
+PATCH http://localhost:5000/api/drivers/delete/60c27707963d74f5f4c264e4
+Content-Type: application/json
+
+### Create util
+
+POST http://localhost:5000/api/utils/create
+Content-Type: application/json
+
+{
+	"car": "60c27707963d74f5f4c264e1",
+	"reason": "trip",
+	"driver": "60c27707963d74f5f4c264e4"
+	
+	
+}
+
+### Finish util
+
+PATCH http://localhost:5000/api/utils/finish/60c27fb60052ce07cd8347e8
+Content-Type: application/json
+
