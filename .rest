@@ -69,6 +69,16 @@ Content-Type: application/json
 PATCH http://localhost:5000/api/drivers/delete/60c27707963d74f5f4c264e4
 Content-Type: application/json
 
+### Get driver by name
+
+GET http://localhost:5000/api/drivers/filter?text=Daniel
+Content-Type: application/json
+
+### Get utils
+
+GET http://localhost:5000/api/utils
+Content-Type: application/json
+
 ### Create util
 
 POST http://localhost:5000/api/utils/create

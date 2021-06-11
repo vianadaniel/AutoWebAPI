@@ -7,7 +7,9 @@
     "build": "tsc",
     "start": "node ./dist/server.js",
     "test": "jest --detectOpenHandles --forceExit",
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules server.ts"
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules server.ts",
+    "data:import": "ts-node seeder.ts",
+    "data:destroy": "ts-node seeder.ts -d"
   },
   "dependencies": {
     "cors": "^2.8.5",
