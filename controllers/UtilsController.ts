@@ -39,7 +39,7 @@ class UtilsController {
                 driver: data.driver,
             }).sort({ _id: -1 })
 
-            if (!driver?.endDate) {
+            if (driver && !driver?.endDate) {
                 message = 'Este motorista está utilizando um carro no momento'
                 throw new Error('Este motorista está utilizando um carro no momento')
             }
@@ -52,7 +52,7 @@ class UtilsController {
             data['startDate'] = subtractThreeHours(date)
             const util = await new Utils(data).save()
 
-            car.isAvailable = false
+            car.isAvailable = true
             car.save()
 
             return response
