@@ -39,7 +39,7 @@ class UtilsController {
                 driver: data.driver,
             }).sort({ _id: -1 })
 
-            if (driver?.endDate) {
+            if (!driver?.endDate) {
                 message = 'Este motorista está utilizando um carro no momento'
                 throw new Error('Este motorista está utilizando um carro no momento')
             }
