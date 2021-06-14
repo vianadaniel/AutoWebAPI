@@ -14,10 +14,24 @@ describe('Create end finish utils', () => {
     });
 
     it('should be able to create a new util', async done => {
+
+        const car: any = await request(app)
+            .get(`/api/cars/filter?text=blue123`)
+
+        const idCar = JSON.parse(car.text).cars[0].items[0]._id
+
+        const driver: any = await request(app)
+            .get(`/api/drivers/filter?text=test`)
+
+        const idDriver = JSON.parse(driver.text).drivers[0].items[0]._id
+
+
+
+
         const body = {
-            car: "60c27707963d74f5f4c264e3",
+            car: `${idCar}`,
             reason: "test",
-            driver: "60c27707963d74f5f4c264e6"
+            driver: `${idDriver}`
 
 
         }
@@ -25,7 +39,7 @@ describe('Create end finish utils', () => {
         const response = await request(app)
             .post(`/api/utils/create`)
             .send(body);
-
+        console.log(response)
 
         try {
             expect(response.status)
