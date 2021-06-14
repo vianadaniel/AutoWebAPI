@@ -48,9 +48,6 @@ NODE_ENV = development
 
 ```
 
-A primeira constante **NODE_ENV** 'development' retorna os erros como objetos json.
-Ao mudar para o ambiente de produção, 'production', o erro não retornará como json, mas sim como StatusCode.
-
 
 
 Para criar um banco de dados cadastre em <a href="https://cloud.google.com/mongodb">
