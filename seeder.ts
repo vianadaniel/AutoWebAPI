@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 import connectDB from './config/db';
-import Cars from "./models/carsModel";
+import Cars from "./models/CarsModel";
 import cars from "./data/cars";
-import Drivers from "./models/driversModel";
+import Drivers from "./models/DriversModel";
 import drivers from "./data/drivers";
 
 dotenv.config();
